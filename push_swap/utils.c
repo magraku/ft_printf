@@ -6,7 +6,7 @@
 /*   By: gerramir <gerramir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 11:37:44 by gerramir          #+#    #+#             */
-/*   Updated: 2026/05/21 15:42:26 by gerramir         ###   ########.fr       */
+/*   Updated: 2026/05/21 16:27:24 by gerramir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 ft_lst_add_back()
 {
+	
+	
 }
 
 int	is_alpha(int c)
