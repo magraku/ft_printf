@@ -1,74 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gerramir <gerramir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/21 12:25:34 by gerramir          #+#    #+#             */
+/*   Updated: 2026/05/21 15:41:39 by gerramir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-ft_lst_new(char *str)
+int	ft_flag(char *av)
 {
+	char	bench[8];
+	char	complex[10];
+	char	simple[9];
+	char	medium[9];
+	char	adaptive[11];
+
+	ft_strlcpy(bench, "--bench", 8);
+	ft_strlcpy(complex, "--complex", 10);
+	ft_strlcpy(simple, "--simple", 9);
+	ft_strlcpy(medium, "--medium", 9);
+	ft_strlcpy(adaptive, "--adaptive", 11);
 	
-}
-
-
-
-int	ft_flag(char *av,)
-{
-	int		i;
-	char	bench[] = "--bench";
-	char	complex[] = "--complex";
-	char	simple[] = "--simple";
-	char	medium[] = "--medium";
-	char	adaptive[] = "--adaptive";
-
 	if (ft_strcmp(av, bench) == 0)
-	{
-		fontcion_bench();
-		return (1);
-	}
+		return (fontcion_bench(), 1);
 	else if (ft_strcmp(av, complex) == 0)
-	{
-		fontcion_complex();
-		return (1);
-	}
+		return (fontcion_complex(), 1);
 	else if (ft_strcmp(av, simple) == 0)
-	{
-		fontcion_simple();
-		return (1);
-	}
+		return (fontcion_simple(), 1);
 	else if (ft_strcmp(av, medium) == 0)
-	{
-		fontcion_medium() return (1);
-	}
+		return (fontcion_medium(), 1);
 	else if (ft_strcmp(av, adaptive) == 0)
-	{
-		fontcion_adaptive();
-		return (1);
-	}
+		return (fontcion_adaptive(), 1);
 	ft_putstr("error");
 	return (0);
 }
 
-
-
 int	main(int ac, char **av)
 {
-	int i;
-	int j;
-
+	int	i;
+	int	j;
 
 	j = 1;
 	i = 0;
-	while (av[j])
+	if (ac > 0)
 	{
-		while (av[j][i])
+		if (av[1][i] == '-' && av[1][i + 1] == '-')
 		{
-			if (av[j][i] == '-' && av[j][i + 1] == '-')
-				ft_flag(av[j]);
-
-            else if(ft_verify_digit(av[j]))
-				ft_lst_new(av[j]);
-				ft_lst_add_back(av[j]);                
-			i++;
+			if (ft_flag(av[1]) == 0)
+				return (0);
+			j++;
 		}
-        j++;
+		while (av[j])
+		{
+			if (ft_verify_digit(av[j]))
+				int_assignation(av[j]);
+			else
+				return (write(1, "error", 5), 0);
+			j++;
+		}
 	}
-
-	write(1, "\n", 1);
 	return (0);
 }
